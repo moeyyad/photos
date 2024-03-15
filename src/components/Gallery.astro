@@ -16,7 +16,32 @@ async function ImageFetcher(pattern: string) {
   return imageFiles
 }
 
-const imageFiles = await ImageFetcher('public/images/*.{jpg,,jpeg,png,webp}')
+
+function GetImageTitle(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.title;
+    }
+  }
+}
+
+function GetImageDescription(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.description;
+    }
+  }
+}
+
+const imageData = [
+  {
+    image: "/images/tiffany-falls-winter-2021.jpg",
+    title: "Tiffany Falls",
+    description: "Taken at sunrise on a particularly cold February morning in 2021"
+  }
+];
+
+const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}')
 
 const { title, description } = Astro.props
 ---
@@ -33,8 +58,8 @@ const { title, description } = Astro.props
             alt="Astro Multiverse"
           />
         </a>
-        <h2>{title}</h2>
-        <p>{description}</p>
+        <h2>{GetImageTitle(img.src, imageData) || title}</h2>
+        <p>{GetImageDescription(img.src, imageData) || description}</p>
       </article>
     ))
   }

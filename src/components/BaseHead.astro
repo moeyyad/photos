@@ -13,14 +13,13 @@ const { title, description, author, og } = Astro.props
 
 <head>
   <meta charset="utf-8" />
-  <meta name="robots" content="index, follow" />
   <meta
     name="googlebot"
     content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
   />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="generator" content={Astro.generator} />
-  <link rel="shortcut icon" type="image/png" href="./favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>{title}</title>
   <meta name="title" content={title} />
   <meta name="description" content={description} />

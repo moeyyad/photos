@@ -5,24 +5,23 @@ import Footer from '@/components/Footer.astro'
 import Gallery from '@/components/Gallery.astro'
 import ExternalScripts from '@/components/ExternalScripts.astro'
 
-let title = 'Multiverse by HTML5 UP'
-let description =
-  'Say hello to Multiverse, a slick, one-page gallery design with a fully functional lightbox.'
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
 ---
 
 <!doctype html>
 <html lang="en">
   <BaseHead
-    title={title}
+    title='Moeyyad Photography'
     description={description}
-    author={'AREA44'}
+    author={title}
     og={'og-image.jpg'}
   />
 
   <body class="is-preload">
     <Header title={title} />
     <Footer title={title} description={description} />
-    <Gallery title={title} description={description} />
+    <Gallery title='Unknown' description='Is all that we see or seem, but a dream within a dream' />
     <ExternalScripts />
   </body>
 </html>

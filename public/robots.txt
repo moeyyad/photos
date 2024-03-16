@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://astro-multiverse.netlify.app/sitemap-index.xml

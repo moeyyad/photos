@@ -1,11 +1,11 @@
 {
-  "name": "astro-multiverse",
+  "name": "moeyyad-photography",
   "version": "23.9.9",
   "private": true,
   "license": "CCA-3.0",
   "author": {
-    "name": "AREA44",
-    "url": "https://github.com/AREA44/astro-multiverse"
+    "name": "Moeyyad Qureshi",
+    "url": "https://github.com/moeyyad"
   },
   "scripts": {
     "build": "astro build",

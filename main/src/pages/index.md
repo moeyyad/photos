@@ -2,18 +2,24 @@
 layout: ../layouts/Layout.astro
 ---
 
-# Table of Contents
+# Moeyyad Photography
 
 [About](/comingsoon)
 
-[On the importance of sex](/comingsoon)
+[Contact](/comingsoon)
 
-[The artist mindset](/comingsoon)
+## Galleries
 
-[A blank canvas](/comingsoon)
+[Showcase](https://moeyyad-showcase.surge.sh)
 
-[The first brush stroke](/comingsoon)
+[2024](/comingsoon)
 
-[The entire palette](/comingsoon)
+[2023](/comingsoon)
 
-[Finishing touches](/comingsoon)
+[2022](/comingsoon)
+
+[2021](/comingsoon)
+
+[2020](/comingsoon)
+
+[Past](/comingsoon)

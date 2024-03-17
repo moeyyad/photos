@@ -2,20 +2,32 @@
 import { Image } from 'astro:assets'
 import { glob } from 'glob'
 
-async function ImageFetcher(pattern: string) {
-  const files = glob.sync(pattern, { posix: true })
-  const imagePromises = files.map(async (file) => {
-    const src = file.replace('public', '')
-    return { src }
-  })
-
-  const imageFiles = await Promise.all(imagePromises)
-
-  imageFiles.sort((a, b) => a.src.localeCompare(b.src))
-
-  return imageFiles
-}
-
+const imageData = [
+  {
+    image: "/images/tiffany-falls-winter-2021.jpg",
+    title: "Tiffany Falls",
+    description: "Taken at sunrise on a particularly cold February morning in 2021",
+    index: 1
+  },
+  {
+    image: "/images/thousand-islands-summer-2019.jpg",
+    title: "Thousand Islands",
+    description: "Our boat slowly circled Boldt Castle as we stood captivated",
+    index: 2
+  },
+  {
+    image: "/images/algonquin-fall-2020.jpg",
+    title: "Lake of Two Rivers",
+    description: "Waking up to a calm Autumn morning on a solo camping trip",
+    index: 3
+  },
+  {
+    image: "/images/sydney-bay-spring-2023.jpg",
+    title: "Sydney Bay",
+    description: "Taking a break halfway through a 30km hike",
+    index: 4
+  },
+];
 
 function GetImageTitle(filename, jsonData) {
   for (const item of jsonData) {
@@ -33,26 +45,30 @@ function GetImageDescription(filename, jsonData) {
   }
 }
 
-const imageData = [
-  {
-    image: "/images/tiffany-falls-winter-2021.jpg",
-    title: "Tiffany Falls",
-    description: "Taken at sunrise on a particularly cold February morning in 2021"
-  },
-  {
-    image: "/images/sydney-bay-spring-2023.jpg",
-    title: "Sydney Bay",
-    description: "Taking a break halfway through a 30km hike"
-  },
-  {
-    image: "/images/algonquin-fall-2020.jpg",
-    title: "Lake of Two Rivers",
-    description: "Waking up to a calm Autumn morning on a solo camping trip"
+function GetImageIndex(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.index;
+    }
   }
-];
+  return 999;
+}
 
-const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}')
+async function ImageFetcher(pattern: string, jsonData) {
+  const files = glob.sync(pattern, { posix: true })
+  const imagePromises = files.map(async (file) => {
+    const src = file.replace('public', '')
+    return { src }
+  })
 
+  const imageFiles = await Promise.all(imagePromises)
+
+  imageFiles.sort((a, b) => GetImageIndex(a.src, jsonData) - GetImageIndex(b.src, jsonData))
+
+  return imageFiles
+}
+
+const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}', imageData)
 const { title, description } = Astro.props
 ---
 

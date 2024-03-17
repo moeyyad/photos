@@ -46,6 +46,12 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 				{ !isHome && (
 					<a href="/">home</a>
 				)}
+				{ isHome && (
+					<div class="screen-bottom">
+						<a href="/comingsoon">about</a>
+						<a href="/comingsoon">contact</a>
+				    </div>
+				)}
 			</footer>
 		</div>
 	</body>
@@ -109,5 +115,12 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 
 	body:not(.is-home) a {
 		text-decoration: underline;
+	}
+
+	.screen-bottom {
+		display: flex;
+  		flex-direction: column;
+		position: fixed; 
+		bottom: 0px;
 	}
 </style>

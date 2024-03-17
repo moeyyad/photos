@@ -110,7 +110,7 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 	h1 {
 		font-size: 1.2rem;
 		font-weight: 500;
-		padding-bottom: 10px;
+		padding-bottom: 0.5rem;
 	}
 
 	body:not(.is-home) a {
@@ -121,6 +121,11 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 		display: flex;
   		flex-direction: column;
 		position: fixed; 
-		bottom: 0px;
+		bottom: 1rem;
+	}
+
+	.screen-bottom a {
+		padding: 0.5rem;
+		padding-left: 0;
 	}
 </style>

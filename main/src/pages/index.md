@@ -4,7 +4,7 @@ layout: ../layouts/Layout.astro
 
 # Moeyyad Photography
 
-[Showcase](https://moeyyad-showcase.surge.sh)
+[showcase](https://moeyyad-showcase.surge.sh)
 
 [2024](/comingsoon)
 
@@ -16,4 +16,4 @@ layout: ../layouts/Layout.astro
 
 [2020](/comingsoon)
 
-[Past](/comingsoon)
+[past](/comingsoon)

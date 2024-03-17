@@ -4,12 +4,6 @@ layout: ../layouts/Layout.astro
 
 # Moeyyad Photography
 
-[About](/comingsoon)
-
-[Contact](/comingsoon)
-
-## Galleries
-
 [Showcase](https://moeyyad-showcase.surge.sh)
 
 [2024](/comingsoon)

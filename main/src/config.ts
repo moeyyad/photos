@@ -1,6 +1,6 @@
 
 
-export const SITE_NAME = 'Modern Kama Sutra'
+export const SITE_NAME = 'Moeyyad Photography'
 
 
-export const DESCRIPTION = 'Exploring the link between creativity and sexual experience '
+export const DESCRIPTION = 'Photos of my recent adventures'

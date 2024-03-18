@@ -6,8 +6,6 @@ layout: ../layouts/Layout.astro
 
 [showcase](https://moeyyad-showcase.surge.sh)
 
-[2024](/comingsoon)
-
 [2023](/comingsoon)
 
 [2022](/comingsoon)
@@ -16,4 +14,4 @@ layout: ../layouts/Layout.astro
 
 [2020](/comingsoon)
 
-[past](/comingsoon)
+[past](https://moeyyad-past.surge.sh)

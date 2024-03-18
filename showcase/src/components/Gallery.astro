@@ -4,121 +4,121 @@ import { glob } from 'glob'
 
 const imageData = [
   {
-    image: "/images/tiffany-falls-winter-2021.jpg",
+    image: "/src/assets/tiffany-falls-winter-2021.jpg",
     title: "Tiffany Falls",
     description: "Taken at sunrise on a particularly cold February morning in 2021",
     index: 1
   },
   {
-    image: "/images/thousand-islands-summer-2019.jpg",
+    image: "/src/assets/thousand-islands-summer-2019.jpg",
     title: "Thousand Islands",
     description: "Our boat slowly circled Boldt Castle as we stood captivated",
     index: 2
   },
   {
-    image: "/images/algonquin-fall-2020.jpg",
+    image: "/src/assets/algonquin-fall-2020.jpg",
     title: "Lake of Two Rivers",
     description: "Waking up to a calm Autumn morning on a solo camping trip",
     index: 3
   },
   {
-    image: "/images/pismo-beach-winter-2020.jpg",
+    image: "/src/assets/pismo-beach-winter-2020.jpg",
     title: "Pismo Beach",
     description: "I stood amidst the roar of a surf tormented shore",
     index: 4
   },
   {
-    image: "/images/silent-lake-winter-2023.jpg",
+    image: "/src/assets/silent-lake-winter-2023.jpg",
     title: "Silent Lake",
     description: "A storm was brewing above us as we prepared to camp for the night",
     index: 4.5
   },
   {
-    image: "/images/mono-cliffs-spring-2020.jpg",
+    image: "/src/assets/mono-cliffs-spring-2020.jpg",
     title: "Mono Cliffs",
     description: "Moments like these formed the decision to hike the entire Bruce Trail",
     index: 5
   },
   {
-    image: "/images/track-and-tower-fall-2020.jpg",
+    image: "/src/assets/track-and-tower-fall-2020.jpg",
     title: "Track and Tower",
     description: "Imagine if the maple leaf on our flag had a gradient",
     index: 6
   },
   {
-    image: "/images/bow-lake-spring-2023.jpg",
+    image: "/src/assets/bow-lake-spring-2023.jpg",
     title: "Bow Lake",
     description: "An alpine lake fed through a glacial waterfall",
     index: 7
   },
   {
-    image: "/images/mount-tamalpais-distant-winter-2020.jpg",
+    image: "/src/assets/mount-tamalpais-distant-winter-2020.jpg",
     title: "Mount Tamalpais",
     description: "Breaking down the line that seperates me from the rest of the universe",
     index: 8
   },
   {
-    image: "/images/big-sur-winter-2020.jpg",
+    image: "/src/assets/big-sur-winter-2020.jpg",
     title: "Big Sur",
     description: "We encountered a mountain lion on the way to the lookout",
     index: 9
   },
   {
-    image: "/images/george-lake-summer-2020.jpg",
+    image: "/src/assets/george-lake-summer-2020.jpg",
     title: "George Lake",
     description: "Why are they kayaking backwards?",
     index: 10
   },
   {
-    image: "/images/oceano-dunes-winter-2020.jpg",
+    image: "/src/assets/oceano-dunes-winter-2020.jpg",
     title: "Oceano Dunes",
     description: "Tryin' to catch me ridin' dirty",
     index: 11
   },
   {
-    image: "/images/frontenac-winter-2022.jpg",
+    image: "/src/assets/frontenac-winter-2022.jpg",
     title: "Frontenac",
     description: "A sunny +16C day in a Canadian Winter",
     index: 12
   },
   {
-    image: "/images/singhampton-caves-summer-2023.jpg",
+    image: "/src/assets/singhampton-caves-summer-2023.jpg",
     title: "Singhampton Caves",
     description: "I wonder how my life would be if I was a caveman",
     index: 13
   },
   {
-    image: "/images/iroquoia-fall-2022.jpg",
+    image: "/src/assets/iroquoia-fall-2022.jpg",
     title: "Bruce Trail",
     description: "Late fall produces the most beautiful snow covered forests",
     index: 15
   },
   {
-    image: "/images/golden-gate-bridge-winter-2020.jpg",
+    image: "/src/assets/golden-gate-bridge-winter-2020.jpg",
     title: "Golden Gate Bridge",
     description: "San Francisco has a surreal quality to it",
     index: 16
   },
   {
-    image: "/images/iroquoia-heights-fall-2023.jpg",
+    image: "/src/assets/iroquoia-heights-fall-2023.jpg",
     title: "Iroquoia Heights",
     description: "Walking through a golden forest with a Tim Hortons coffee in hand",
     index: 17
   },
   {
-    image: "/images/mount-mckay-summer-2018.jpg",
+    image: "/src/assets/mount-mckay-summer-2018.jpg",
     title: "Mount McKay",
     description: "The view from the lookout is wonderful, I'm sure",
     index: 18
   },
   {
-    image: "/images/killarney-summer-2021.jpg",
+    image: "/src/assets/killarney-summer-2021.jpg",
     title: "Cranberry Bog",
     description: "A most beautiful Canada's Day",
     index: 19
   },
   {
-    image: "/images/sydney-bay-spring-2023.jpg",
+    image: "/src/assets/sydney-bay-spring-2023.jpg",
     title: "Sydney Bay",
     description: "Taking a break halfway through a 30km hike",
     index: 20
@@ -165,24 +165,40 @@ async function ImageFetcher(pattern: string, jsonData) {
   return imageFiles
 }
 
-const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}', imageData)
+import type { ImageMetadata } from 'astro';
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+
+const imageFiles = [];
+for (const key in images) {
+  if (images.hasOwnProperty(key)) {
+    await images[key]();
+    imageFiles.push(key)
+  }
+}
+imageFiles.sort((a, b) => GetImageIndex(a, imageData) - GetImageIndex(b, imageData))
+const finalImageFiles = imageFiles.map((file) => {
+  const src = file.replace('/src/', '')
+  return src 
+})
+console.log(finalImageFiles)
+
 const { title, description } = Astro.props
 ---
 
 <div id="main">
   {
-    imageFiles.map((img) => (
+    finalImageFiles.map((img) => (
       <article class="thumb">
-        <a class="image" href={img.src}>
+        <a class="image" href={img}>
           <Image
-            src={img.src}
+            src={img}
             width="1200"
             height="750"
             alt="Moeyyad Photography"
           />
         </a>
-        <h2>{GetImageTitle(img.src, imageData) || title}</h2>
-        <p>{GetImageDescription(img.src, imageData) || description}</p>
+        <h2>{GetImageTitle(img, imageData) || title}</h2>
+        <p>{GetImageDescription(img, imageData) || description}</p>
       </article>
     ))
   }

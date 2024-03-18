@@ -44,7 +44,7 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 
 			<footer>
 				{ !isHome && (
-					<a href="/">home</a>
+					<a href="/">back</a>
 				)}
 				{ isHome && (
 					<div class="screen-bottom">
@@ -127,5 +127,12 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 		position: fixed; 
 		bottom: 1.2rem;
 	}
+
+	@media (hover: none) and (orientation: landscape) {
+	.screen-bottom {
+		padding-top: 2rem;
+		position: relative;
+	}
+}
 
 </style>

@@ -151,20 +151,6 @@ function GetImageIndex(filename, jsonData) {
   return 999;
 }
 
-async function ImageFetcher(pattern: string, jsonData) {
-  const files = glob.sync(pattern, { posix: true })
-  const imagePromises = files.map(async (file) => {
-    const src = file.replace('public', '')
-    return { src }
-  })
-
-  const imageFiles = await Promise.all(imagePromises)
-
-  imageFiles.sort((a, b) => GetImageIndex(a.src, jsonData) - GetImageIndex(b.src, jsonData))
-
-  return imageFiles
-}
-
 import type { ImageMetadata } from 'astro';
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
 
@@ -176,18 +162,13 @@ for (const key in images) {
   }
 }
 imageFiles.sort((a, b) => GetImageIndex(a, imageData) - GetImageIndex(b, imageData))
-const finalImageFiles = imageFiles.map((file) => {
-  const src = file.replace('/src/', '')
-  return src 
-})
-console.log(finalImageFiles)
 
 const { title, description } = Astro.props
 ---
 
 <div id="main">
   {
-    finalImageFiles.map((img) => (
+    imageFiles.map((img) => (
       <article class="thumb">
         <a class="image" href={img}>
           <Image

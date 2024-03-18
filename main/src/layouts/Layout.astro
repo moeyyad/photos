@@ -44,12 +44,16 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 
 			<footer>
 				{ !isHome && (
-					<a href="/">back</a>
+					<a href="/" style="text-decoration: underline">back</a>
 				)}
+				<!--
+					Element overlap occurs if markdown contents take a lot of vertical space
+					If this is a problem, disable .screen-bottom `position` and `bottom` attributes 
+				-->
 				{ isHome && (
 					<div class="screen-bottom">
-						<a href="/comingsoon">about</a>
-						<a href="/comingsoon">contact</a>
+						<a href="/about">about</a>
+						<a href="/contact">contact</a>
 				    </div>
 				)}
 			</footer>
@@ -115,10 +119,6 @@ const pageTitle = frontmatter.title ? frontmatter.title : SITE_NAME
 		font-size: 1.2rem;
 		font-weight: 500;
 		padding-bottom: 0.5rem;
-	}
-
-	body:not(.is-home) a {
-		text-decoration: underline;
 	}
 
 	.screen-bottom {

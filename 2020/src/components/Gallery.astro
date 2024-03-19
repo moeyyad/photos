@@ -1,0 +1,164 @@
+---
+import { Image } from 'astro:assets'
+import { glob } from 'glob'
+
+const imageData = [
+  {
+    image: "/images/golden-gate.jpg",
+    title: "Golden Gate Bridge",
+    description: "The Grumpy Old Troll wouldn't be so grumpy if he lived under this bridge",
+    index: 1
+  },
+  {
+    image: "/images/muir-beach-overlook.jpg",
+    title: "Muir Overlook",
+    description: "The coasts of California feel like the edge of the world",
+    index: 2
+  },
+  {
+    image: "/images/oceano-dunes.jpg",
+    title: "Oceano Dunes",
+    description: "Speed is the name of the game",
+    index: 3
+  },
+  {
+    image: "/images/molera-beach.jpg",
+    title: "Andrew Molera",
+    description: "Steeper than it looks",
+    index: 4
+  },
+  {
+    image: "/images/pismo-beach.jpg",
+    title: "Pismo Beach",
+    description: "Lovely evening to gallop along the shores",
+    index: 5
+  },
+  {
+    image: "/images/venice-beach.jpg",
+    title: "Los Angeles",
+    description: "Dreamy landscapes inspire beautiful architecture",
+    index: 6
+  },
+  {
+    image: "/images/hollywood.jpg",
+    title: "Hollywood",
+    description: "A squad of Osprey aircrafts flew overhead as we were leaving",
+    index: 7
+  },
+  {
+    image: "/images/track-and-tower.jpg",
+    title: "Track and Tower",
+    description: "A golden hue so brilliant it's as if the trees turned into fire",
+    index: 8
+  },
+  {
+    image: "/images/centennial-ridges.jpg",
+    title: "Centennial Ridges",
+    description: "Not pictured: swarms upon swarms of black flies",
+    index: 9
+  },
+  {
+    image: "/images/killarney-lake.jpg",
+    title: "Killarney Lake",
+    description: "Heaven is reaching the end of a portage",
+    index: 99
+  },
+  {
+    image: "/images/duck.jpg",
+    title: "Algonquin",
+    description: "Mr.Duck taking a sunset stroll along the beach",
+    index: 99
+  },
+  {
+    image: "/images/lake-of-two-rivers.jpg",
+    title: "Lake of Two Rivers",
+    description: "I would never take a car on a joyride, but a canoe...",
+    index: 99
+  },
+  {
+    image: "/images/osa-lake.jpg",
+    title: "O.S.A. Lake",
+    description: "Survived my first night in the backcountry and we slept on our own island",
+    index: 99
+  },
+  {
+    image: "/images/cheltenham-badlands.jpg",
+    title: "Cheltenham Badlands",
+    description: "Usually I like being outdoors, places like this are the exception",
+    index: 99
+  },
+  {
+    image: "/images/mono-cliffs.jpg",
+    title: "Mono Cliffs",
+    description: "Every hike I fall in love with the Bruce Trail all over again",
+    index: 99
+  },
+  {
+    image: "/images/dufferin-hi-land.jpg",
+    title: "Dufferin Hi-Land",
+    description: "Sometimes an endless forest is just what you need",
+    index: 99
+  },
+];
+
+function GetImageTitle(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.title;
+    }
+  }
+}
+
+function GetImageDescription(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.description;
+    }
+  }
+}
+
+function GetImageIndex(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.index;
+    }
+  }
+  return 999;
+}
+
+async function ImageFetcher(pattern: string, jsonData) {
+  const files = glob.sync(pattern, { posix: true })
+  const imagePromises = files.map(async (file) => {
+    const src = file.replace('public', '')
+    return { src }
+  })
+
+  const imageFiles = await Promise.all(imagePromises)
+
+  imageFiles.sort((a, b) => GetImageIndex(a.src, jsonData) - GetImageIndex(b.src, jsonData))
+
+  return imageFiles
+}
+
+const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}', imageData)
+const { title, description } = Astro.props
+---
+
+<div id="main">
+  {
+    imageFiles.map((img) => (
+      <article class="thumb">
+        <a class="image" href={img.src}>
+          <Image
+            src={img.src}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>{GetImageTitle(img.src, imageData) || title}</h2>
+        <p>{GetImageDescription(img.src, imageData) || description}</p>
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,140 @@
+---
+import { Image } from 'astro:assets'
+import { glob } from 'glob'
+
+const imageData = [
+  {
+    image: "/images/la-cloche.jpg",
+    title: "La Cloche Silhouette",
+    description: "A beautiful unnamed lake on the remote northern side of the trail",
+    index: 1
+  },
+  {
+    image: "/images/hilton-falls.jpg",
+    title: "Hilton Falls",
+    description: "It's not the height of the drop but the volume of the water",
+    index: 2
+  },
+  {
+    image: "/images/arrowhead.jpg",
+    title: "Arrowhead",
+    description: "Learning to ski in -32C weather",
+    index: 3
+  },
+  {
+    image: "/images/indian-head-cove.jpg",
+    title: "Indian Head Cove",
+    description: "The jump is scary once you realize how cold the water is",
+    index: 4
+  },
+  {
+    image: "/images/lake-of-two-rivers-sunset.jpg",
+    title: "Lake of Two Rivers",
+    description: "I'm sure the ducks are enjoying the vapourwave sunset as much as I am",
+    index: 5
+  },
+  {
+    image: "/images/lake-of-two-rivers-sunrise.jpg",
+    title: "Lake of Two Rivers",
+    description: "A beautiful sunrise to complement yesterday's sunset",
+    index: 6
+  },
+  {
+    image: "/images/morningstar-mill.jpg",
+    title: "Morningstar Mill",
+    description: "Totally worth the 2km detour",
+    index: 7
+  },
+  {
+    image: "/images/highlands.jpg",
+    title: "Starling Pond",
+    description: "Green, blue, and white are the only colours I need",
+    index: 8
+  },
+  {
+    image: "/images/swayze-falls.jpg",
+    title: "Swayze Falls",
+    description: "Approaching a waterfall from the bottom is a magical feeling",
+    index: 9
+  },
+  {
+    image: "/images/dundas-valley.jpg",
+    title: "Dundas Valley",
+    description: "Hiking 54km in one day",
+    index: 10
+  },
+  {
+    image: "/images/albion-falls.jpg",
+    title: "Albion Falls",
+    description: "A particularly good year for autumn colours",
+    index: 11
+  },
+  {
+    image: "/images/eramosa-karst.jpg",
+    title: "Eramosa Karst",
+    description: "A particularly beautiful first snowfall of the year",
+    index: 12
+  }
+];
+
+function GetImageTitle(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.title;
+    }
+  }
+}
+
+function GetImageDescription(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.description;
+    }
+  }
+}
+
+function GetImageIndex(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.index;
+    }
+  }
+  return 999;
+}
+
+async function ImageFetcher(pattern: string, jsonData) {
+  const files = glob.sync(pattern, { posix: true })
+  const imagePromises = files.map(async (file) => {
+    const src = file.replace('public', '')
+    return { src }
+  })
+
+  const imageFiles = await Promise.all(imagePromises)
+
+  imageFiles.sort((a, b) => GetImageIndex(a.src, jsonData) - GetImageIndex(b.src, jsonData))
+
+  return imageFiles
+}
+
+const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}', imageData)
+const { title, description } = Astro.props
+---
+
+<div id="main">
+  {
+    imageFiles.map((img) => (
+      <article class="thumb">
+        <a class="image" href={img.src}>
+          <Image
+            src={img.src}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>{GetImageTitle(img.src, imageData) || title}</h2>
+        <p>{GetImageDescription(img.src, imageData) || description}</p>
+      </article>
+    ))
+  }
+</div>

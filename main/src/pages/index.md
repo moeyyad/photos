@@ -6,11 +6,11 @@ layout: ../layouts/Layout.astro
 
 [showcase](https://moeyyad-showcase.surge.sh)
 
-[2023 (wip)](/comingsoon)
+[2023](https://moeyyad-2023.surge.sh)
 
 [2022](https://moeyyad-2022.surge.sh)
 
-[2021 (wip)](/comingsoon)
+[2021](https://moeyyad-2021.surge.sh)
 
 [2020](https://moeyyad-2020.surge.sh)
 

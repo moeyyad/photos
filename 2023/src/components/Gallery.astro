@@ -1,0 +1,182 @@
+---
+import { Image } from 'astro:assets'
+import { glob } from 'glob'
+
+const imageData = [
+  {
+    image: "/images/roy-thomson-mezzanine.jpg",
+    title: "Roy Thompson Hall",
+    description: "Bolero by Ravel and Concierto de Aranjuez by Roderigo",
+    index: 1
+  },
+  {
+    image: "/images/moraine-lake.jpg",
+    title: "Moraine Lake",
+    description: "Thank you Windows 7 for making everyone aware such a place exists",
+    index: 2
+  },
+  {
+    image: "/images/marathon.jpg",
+    title: "Marathon",
+    description: "A bench is a temporary respite from the common suffering of a trail runner",
+    index: 3
+  },
+  {
+    image: "/images/dyers-bay.jpg",
+    title: "Dyers Bay",
+    description: "We were treated to amazing views the entire way",
+    index: 4
+  },
+  {
+    image: "/images/bow-lake.jpg",
+    title: "Bow Lake",
+    description: "Barefoot training should be started as young as possible",
+    index: 5
+  },
+  {
+    image: "/images/silent-lake.jpg",
+    title: "Silent Lake",
+    description: "A lone pine tree makes me feel some sort of way",
+    index: 6
+  },
+  {
+    image: "/images/jackson-cove.jpg",
+    title: "Jackson Cove",
+    description: "Cloudy days make the forest greens glow",
+    index: 7
+  },
+  {
+    image: "/images/peyto-lake.jpg",
+    title: "Peyto Lake",
+    description: "The deep blue of the glacial lake is something that must be seen with ones eyes",
+    index: 8
+  },
+  {
+    image: "/images/indian-head-cove.jpg",
+    title: "Indian Head Cove",
+    description: "I love seeing natural gradients",
+    index: 9
+  },
+  {
+    image: "/images/hattie-cove.jpg",
+    title: "Hattie Cove",
+    description: "The moodiness of the clouds does well to complement the aesthetic of Lake Superior",
+    index: 10
+  },
+  {
+    image: "/images/pinery.jpg",
+    title: "Pinery",
+    description: "We saw lots of turtles and fishies!",
+    index: 11
+  },
+  {
+    image: "/images/wasaga-beach.jpg",
+    title: "Wasaga Beach",
+    description: "We hiked 25km barefoot to celebrate my 25th birthday",
+    index: 12
+  },
+  {
+    image: "/images/singhampton-caves.jpg",
+    title: "Singhampton Caves",
+    description: "Unintended camoflague at its finest",
+    index: 13
+  },
+  {
+    image: "/images/nottawasaga-bluffs.jpg",
+    title: "Nottawasaga Bluffs",
+    description: "Traversing an icy crevice after forgetting his spikes at home",
+    index: 14
+  },
+  {
+    image: "/images/roy-thomson-choir-loft.jpg",
+    title: "Roy Thompson Hall",
+    description: "Rite of Spring and Gerschwin Piano Concerto in F",
+    index: 15
+  },
+  {
+    image: "/images/cherry-blossom.jpg",
+    title: "Colpoy Bay",
+    description: "Spring",
+    index: 16
+  },
+  {
+    image: "/images/austin-bruce-trail.jpg",
+    title: "White Bluff",
+    description: "Summer",
+    index: 17
+  },
+  {
+    image: "/images/iroquoia-heights.jpg",
+    title: "Iroquoia Heights",
+    description: "Autumn",
+    index: 18
+  },
+  {
+    image: "/images/dundas-valley.jpg",
+    title: "Dundas Valley",
+    description: "Winter",
+    index: 19
+  },
+];
+
+function GetImageTitle(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.title;
+    }
+  }
+}
+
+function GetImageDescription(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.description;
+    }
+  }
+}
+
+function GetImageIndex(filename, jsonData) {
+  for (const item of jsonData) {
+    if (item.image === filename) {
+      return item.index;
+    }
+  }
+  return 999;
+}
+
+async function ImageFetcher(pattern: string, jsonData) {
+  const files = glob.sync(pattern, { posix: true })
+  const imagePromises = files.map(async (file) => {
+    const src = file.replace('public', '')
+    return { src }
+  })
+
+  const imageFiles = await Promise.all(imagePromises)
+
+  imageFiles.sort((a, b) => GetImageIndex(a.src, jsonData) - GetImageIndex(b.src, jsonData))
+
+  return imageFiles
+}
+
+const imageFiles = await ImageFetcher('public/images/*.{jpg,jpeg,png,webp}', imageData)
+const { title, description } = Astro.props
+---
+
+<div id="main">
+  {
+    imageFiles.map((img) => (
+      <article class="thumb">
+        <a class="image" href={img.src}>
+          <Image
+            src={img.src}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>{GetImageTitle(img.src, imageData) || title}</h2>
+        <p>{GetImageDescription(img.src, imageData) || description}</p>
+      </article>
+    ))
+  }
+</div>

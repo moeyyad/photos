@@ -1,0 +1,44 @@
+---
+const { title, description } = Astro.props
+---
+
+<footer id="footer" class="panel">
+  <div class="inner split">
+    <div>
+      <section>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </section>
+      <p class="copyright">
+        &copy; {title} 2024
+      </p>
+    </div>
+    <div>
+      <section>
+        <h2>Follow me on ...</h2>
+        <ul class="icons">
+          <li>
+            <a href="https://www.instagram.com/moeyyadqureshi/" class="icon brands fa-instagram" aria-label="Social">
+              <span class="label">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/moeyyad.qureshi/" class="icon brands fa-facebook-f" aria-label="Social">
+              <span class="label">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/moeyyad" class="icon brands fa-linkedin-in" aria-label="Social">
+              <span class="label">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/moeyyad" class="icon brands fa-github" aria-label="Social">
+              <span class="label">GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</footer>

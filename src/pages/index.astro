@@ -1,0 +1,30 @@
+---
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import Gallery from '@/components/Gallery.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title='Moeyyad Photography'
+    description={description}
+    author={title}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <a href="/showcase">Showcase</a>
+    <a href="/2023">2023</a>
+    <a href="/2022">2022</a>
+    <a href="/2021">2021</a>
+    <a href="/2020">2020</a>
+    <a href="/past">past</a>
+    <ExternalScripts />
+  </body>
+</html>

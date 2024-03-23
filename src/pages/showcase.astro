@@ -1,0 +1,308 @@
+---
+import { Image } from 'astro:assets'
+import tiffany_falls_winter_2021 from '@/assets/showcase/tiffany-falls-winter-2021.jpg';
+import thousand_islands_summer_2019 from '@/assets/showcase/thousand-islands-summer-2019.jpg';
+import algonquin_fall_2020 from '@/assets/showcase/algonquin-fall-2020.jpg';
+import pismo_beach_winter_2020 from '@/assets/showcase/pismo-beach-winter-2020.jpg';
+import silent_lake_winter_2023 from '@/assets/showcase/silent-lake-winter-2023.jpg';
+import mono_cliffs_spring_2020 from '@/assets/showcase/mono-cliffs-spring-2020.jpg';
+import track_and_tower_fall_2020 from '@/assets/showcase/track-and-tower-fall-2020.jpg';
+import bow_lake_spring_2023 from '@/assets/showcase/bow-lake-spring-2023.jpg';
+import mount_tamalpais_distant_winter_2020 from '@/assets/showcase/mount-tamalpais-distant-winter-2020.jpg';
+import big_sur_winter_2020 from '@/assets/showcase/big-sur-winter-2020.jpg';
+import george_lake_summer_2020 from '@/assets/showcase/george-lake-summer-2020.jpg';
+import oceano_dunes_winter_2020 from '@/assets/showcase/oceano-dunes-winter-2020.jpg';
+import frontenac_winter_2022 from '@/assets/showcase/frontenac-winter-2022.jpg';
+import singhampton_caves_summer_2023 from '@/assets/showcase/singhampton-caves-summer-2023.jpg';
+import iroquoia_fall_2022 from '@/assets/showcase/iroquoia-fall-2022.jpg';
+import golden_gate_bridge_winter_2020 from '@/assets/showcase/golden-gate-bridge-winter-2020.jpg';
+import iroquoia_heights_fall_2023 from '@/assets/showcase/iroquoia-heights-fall-2023.jpg';
+import mount_mckay_summer_2018 from '@/assets/showcase/mount-mckay-summer-2018.jpg';
+import killarney_summer_2021 from '@/assets/showcase/killarney-summer-2021.jpg';
+import sydney_bay_spring_2023 from '@/assets/showcase/sydney-bay-spring-2023.jpg';
+
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title='Moeyyad Photography'
+    description={description}
+    author={title}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <Header title={title} />
+    <Footer title={title} description={description} />
+    <div id="main">
+      <article class="thumb">
+        <a class="image" href={tiffany_falls_winter_2021.src}>
+          <Image
+          src={tiffany_falls_winter_2021}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Tiffany Falls</h2>
+        <p>Taken at sunrise on a particularly cold February morning in 2021</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={thousand_islands_summer_2019.src}>
+          <Image
+          src={thousand_islands_summer_2019}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Thousand Islands</h2>
+        <p>Our boat slowly circled Boldt Castle as we stood captivated</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={algonquin_fall_2020.src}>
+          <Image
+          src={algonquin_fall_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Lake of Two Rivers</h2>
+        <p>Waking up to a calm Autumn morning on a solo camping trip</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={pismo_beach_winter_2020.src}>
+          <Image
+          src={pismo_beach_winter_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Pismo Beach</h2>
+        <p>I stood amidst the roar of a surf tormented shore</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={silent_lake_winter_2023.src}>
+          <Image
+          src={silent_lake_winter_2023}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Silent Lake</h2>
+        <p>A storm was brewing above us as we prepared to camp for the night</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={mono_cliffs_spring_2020.src}>
+          <Image
+          src={mono_cliffs_spring_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Mono Cliffs</h2>
+        <p>Moments like these formed the decision to hike the entire Bruce Trail</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={track_and_tower_fall_2020.src}>
+          <Image
+          src={track_and_tower_fall_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Track and Tower</h2>
+        <p>Imagine if the maple leaf on our flag had a gradient</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={bow_lake_spring_2023.src}>
+          <Image
+          src={bow_lake_spring_2023}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Bow Lake</h2>
+        <p>An alpine lake fed through a glacial waterfall</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={mount_tamalpais_distant_winter_2020.src}>
+          <Image
+          src={mount_tamalpais_distant_winter_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Mount Tamalpais</h2>
+        <p>Breaking down the line that seperates me from the rest of the universe</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={big_sur_winter_2020.src}>
+          <Image
+          src={big_sur_winter_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Big Sur</h2>
+        <p>We encountered a mountain lion on the way to the lookout</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={george_lake_summer_2020.src}>
+          <Image
+          src={george_lake_summer_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>George Lake</h2>
+        <p>Why are they kayaking backwards?</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={oceano_dunes_winter_2020.src}>
+          <Image
+          src={oceano_dunes_winter_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Oceano Dunes</h2>
+        <p>Tryin' to catch me ridin' dirty</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={frontenac_winter_2022.src}>
+          <Image
+          src={frontenac_winter_2022}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Frontenac</h2>
+        <p>A sunny +16C day in a Canadian Winter</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={singhampton_caves_summer_2023.src}>
+          <Image
+          src={singhampton_caves_summer_2023}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Singhampton Caves</h2>
+        <p>I wonder how my life would be if I was a caveman</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={iroquoia_fall_2022.src}>
+          <Image
+          src={iroquoia_fall_2022}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Bruce Trail</h2>
+        <p>Late fall produces the most beautiful snow covered forests</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={golden_gate_bridge_winter_2020.src}>
+          <Image
+          src={golden_gate_bridge_winter_2020}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Golden Gate Bridge</h2>
+        <p>San Francisco has a surreal quality to it</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={iroquoia_heights_fall_2023.src}>
+          <Image
+          src={iroquoia_heights_fall_2023}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Iroquoia Heights</h2>
+        <p>Walking through a golden forest with a Tim Hortons coffee in hand</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={mount_mckay_summer_2018.src}>
+          <Image
+          src={mount_mckay_summer_2018}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Mount McKay</h2>
+        <p>The view from the lookout is wonderful, I'm sure</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={killarney_summer_2021.src}>
+          <Image
+          src={killarney_summer_2021}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Cranberry Bog</h2>
+        <p>A most beautiful Canada's Day</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={sydney_bay_spring_2023.src}>
+          <Image
+          src={sydney_bay_spring_2023}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Sydney Bay</h2>
+        <p>Taking a break halfway through a 30km hike</p>
+      </article>    
+    </div>
+    <ExternalScripts />
+  </body>
+</html>

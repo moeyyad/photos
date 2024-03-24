@@ -1,0 +1,296 @@
+---
+import { Image } from 'astro:assets'
+import roy_thomson_mezzanine from '@/assets/2023/roy-thomson-mezzanine.jpg'
+import moraine_lake from '@/assets/2023/moraine-lake.jpg'
+import marathon from '@/assets/2023/marathon.jpg'
+import dyers_bay from '@/assets/2023/dyers-bay.jpg'
+import bow_lake from '@/assets/2023/bow-lake.jpg'
+import silent_lake from '@/assets/2023/silent-lake.jpg'
+import jackson_cove from '@/assets/2023/jackson-cove.jpg'
+import peyto_lake from '@/assets/2023/peyto-lake.jpg'
+import indian_head_cove from '@/assets/2023/indian-head-cove.jpg'
+import hattie_cove from '@/assets/2023/hattie-cove.jpg'
+import pinery from '@/assets/2023/pinery.jpg'
+import wasaga_beach from '@/assets/2023/wasaga-beach.jpg'
+import singhampton_caves from '@/assets/2023/singhampton-caves.jpg'
+import nottawasaga_bluffs from '@/assets/2023/nottawasaga-bluffs.jpg'
+import roy_thomson_choir_loft from '@/assets/2023/roy-thomson-choir-loft.jpg'
+import cherry_blossom from '@/assets/2023/cherry-blossom.jpg'
+import austin_bruce_trail from '@/assets/2023/austin-bruce-trail.jpg'
+import iroquoia_heights from '@/assets/2023/iroquoia-heights.jpg'
+import dundas_valley from '@/assets/2023/dundas-valley.jpg'
+
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title='Moeyyad Photography'
+    description={description}
+    author={title}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <Header title="2023" />
+    <Footer title={title} description={description} />
+    <div id="main">
+
+      <article class="thumb">
+        <a class="image" href={roy_thomson_mezzanine.src}>
+          <Image
+          src={roy_thomson_mezzanine}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Roy Thompson Hall</h2>
+        <p>Bolero by Ravel and Concierto de Aranjuez by Roderigo</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={moraine_lake.src}>
+          <Image
+          src={moraine_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Moraine Lake</h2>
+        <p>Thank you Windows 7 for making everyone aware such a place exists</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={marathon.src}>
+          <Image
+          src={marathon}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Marathon</h2>
+        <p>A bench is a temporary respite from the common suffering of a trail runner</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={dyers_bay.src}>
+          <Image
+          src={dyers_bay}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Dyers Bay</h2>
+        <p>We were treated to amazing views the entire way</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={bow_lake.src}>
+          <Image
+          src={bow_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Bow Lake</h2>
+        <p>Barefoot training should be started as young as possible</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={silent_lake.src}>
+          <Image
+          src={silent_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Silent Lake</h2>
+        <p>A lone pine tree makes me feel some sort of way</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={jackson_cove.src}>
+          <Image
+          src={jackson_cove}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Jackson Cove</h2>
+        <p>Cloudy days make the forest greens glow</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={peyto_lake.src}>
+          <Image
+          src={peyto_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Peyto Lake</h2>
+        <p>The deep blue of the glacial lake is something that must be seen with ones eyes</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={indian_head_cove.src}>
+          <Image
+          src={indian_head_cove}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Indian Head Cove</h2>
+        <p>I love seeing natural gradients</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={hattie_cove.src}>
+          <Image
+          src={hattie_cove}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Hattie Cove</h2>
+        <p>The moodiness of the clouds does well to complement the aesthetic of Lake Superior</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={pinery.src}>
+          <Image
+          src={pinery}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Pinery</h2>
+        <p>We saw lots of turtles and fishies!</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={wasaga_beach.src}>
+          <Image
+          src={wasaga_beach}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Wasaga Beach</h2>
+        <p>We hiked 25km barefoot to celebrate my 25th birthday</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={singhampton_caves.src}>
+          <Image
+          src={singhampton_caves}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Singhampton Caves</h2>
+        <p>Unintended camoflague at its finest</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={nottawasaga_bluffs.src}>
+          <Image
+          src={nottawasaga_bluffs}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Nottawasaga Bluffs</h2>
+        <p>Traversing an icy crevice after forgetting his spikes at home</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={roy_thomson_choir_loft.src}>
+          <Image
+          src={roy_thomson_choir_loft}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Roy Thompson Hall</h2>
+        <p>Rite of Spring and Gerschwin Piano Concerto in F</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={cherry_blossom.src}>
+          <Image
+          src={cherry_blossom}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Colpoy Bay</h2>
+        <p>Spring</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={austin_bruce_trail.src}>
+          <Image
+          src={austin_bruce_trail}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>White Bluff</h2>
+        <p>Summer</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={iroquoia_heights.src}>
+          <Image
+          src={iroquoia_heights}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Iroquoia Heights</h2>
+        <p>Autumn</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={dundas_valley.src}>
+          <Image
+          src={dundas_valley}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Dundas Valley</h2>
+        <p>Winter</p>
+      </article>
+
+    </div>
+    <ExternalScripts />
+  </body>
+</html>

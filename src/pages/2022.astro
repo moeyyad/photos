@@ -1,0 +1,198 @@
+---
+import { Image } from 'astro:assets'
+import la_cloche from '@/assets/2022/la-cloche.jpg'
+import hilton_falls from '@/assets/2022/hilton-falls.jpg'
+import arrowhead from '@/assets/2022/arrowhead.jpg'
+import indian_head_cove from '@/assets/2022/indian-head-cove.jpg'
+import lake_of_two_rivers_sunset from '@/assets/2022/lake-of-two-rivers-sunset.jpg'
+import lake_of_two_rivers_sunrise from '@/assets/2022/lake-of-two-rivers-sunrise.jpg'
+import morningstar_mill from '@/assets/2022/morningstar-mill.jpg'
+import highlands from '@/assets/2022/highlands.jpg'
+import swayze_falls from '@/assets/2022/swayze-falls.jpg'
+import dundas_valley from '@/assets/2022/dundas-valley.jpg'
+import albion_falls from '@/assets/2022/albion-falls.jpg'
+import eramosa_karst from '@/assets/2022/eramosa-karst.jpg'
+
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title='Moeyyad Photography'
+    description={description}
+    author={title}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <Header title="2022" />
+    <Footer title={title} description={description} />
+    <div id="main">
+
+      <article class="thumb">
+        <a class="image" href={la_cloche.src}>
+          <Image
+          src={la_cloche}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>La Cloche Silhouette</h2>
+        <p>A beautiful unnamed lake on the remote northern side of the trail</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={hilton_falls.src}>
+          <Image
+          src={hilton_falls}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Hilton Falls</h2>
+        <p>It's not the height of the drop but the volume of the water</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={arrowhead.src}>
+          <Image
+          src={arrowhead}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Arrowhead</h2>
+        <p>Learning to ski in -32C weather</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={indian_head_cove.src}>
+          <Image
+          src={indian_head_cove}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Indian Head Cove</h2>
+        <p>The jump is scary once you realize how cold the water is</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={lake_of_two_rivers_sunset.src}>
+          <Image
+          src={lake_of_two_rivers_sunset}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Lake of Two Rivers</h2>
+        <p>I'm sure the ducks are enjoying the vapourwave sunset as much as I am</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={lake_of_two_rivers_sunrise.src}>
+          <Image
+          src={lake_of_two_rivers_sunrise}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Lake of Two Rivers</h2>
+        <p>A beautiful sunrise to complement yesterday's sunset</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={morningstar_mill.src}>
+          <Image
+          src={morningstar_mill}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Morningstar Mill</h2>
+        <p>Totally worth the 2km detour</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={highlands.src}>
+          <Image
+          src={highlands}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Starling Pond</h2>
+        <p>Green, blue, and white are the only colours I need</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={swayze_falls.src}>
+          <Image
+          src={swayze_falls}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Swayze Falls</h2>
+        <p>Approaching a waterfall from the bottom is a magical feeling</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={dundas_valley.src}>
+          <Image
+          src={dundas_valley}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Dundas Valley</h2>
+        <p>Hiking 54km in one day</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={albion_falls.src}>
+          <Image
+          src={albion_falls}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Albion Falls</h2>
+        <p>A particularly good year for autumn colours</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={eramosa_karst.src}>
+          <Image
+          src={eramosa_karst}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Eramosa Karst</h2>
+        <p>A particularly beautiful first snowfall of the year</p>
+      </article>
+
+    </div>
+    <ExternalScripts />
+  </body>
+</html>

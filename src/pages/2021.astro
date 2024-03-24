@@ -1,0 +1,282 @@
+---
+import { Image } from 'astro:assets'
+import winter_campfire from '@/assets/2021/winter-campfire.jpg'
+import magpie_falls from '@/assets/2021/magpie-falls.jpg'
+import elfin_lakes_one from '@/assets/2021/elfin-lakes-one.jpg'
+import stormhaven from '@/assets/2021/stormhaven.jpg'
+import highlands_backpacking from '@/assets/2021/highlands-backpacking.jpg'
+import sinclair_cove from '@/assets/2021/sinclair-cove.jpg'
+import flowerpot from '@/assets/2021/flowerpot.jpg'
+import nokomis_bay from '@/assets/2021/nokomis-bay.jpg'
+import library from '@/assets/2021/library.jpg'
+import grundy_lake from '@/assets/2021/grundy-lake.jpg'
+import big_salmon_lake_loop from '@/assets/2021/big-salmon-lake-loop.jpg'
+import maggie_lake from '@/assets/2021/maggie-lake.jpg'
+import garibaldi from '@/assets/2021/garibaldi.jpg'
+import bnw_campfire from '@/assets/2021/bnw-campfire.jpg'
+import killarney from '@/assets/2021/killarney.jpg'
+import elfin_lakes_two from '@/assets/2021/elfin-lakes-two.jpg'
+import little_sheguiandah_lake from '@/assets/2021/little-sheguiandah-lake.jpg'
+import bon_echo from '@/assets/2021/bon-echo.jpg'
+
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title='Moeyyad Photography'
+    description={description}
+    author={title}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <Header title="2021" />
+    <Footer title={title} description={description} />
+    <div id="main">
+
+      <article class="thumb">
+        <a class="image" href={winter_campfire.src}>
+          <Image
+          src={winter_campfire}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Algonquin</h2>
+        <p>Boiling snow to make tea</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={magpie_falls.src}>
+          <Image
+          src={magpie_falls}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Scenic High Falls</h2>
+        <p>Sometimes colours are just a distraction</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={elfin_lakes_one.src}>
+          <Image
+          src={elfin_lakes_one}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Elfin Lakes</h2>
+        <p>This is how I introduced my friends to backpacking</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={stormhaven.src}>
+          <Image
+          src={stormhaven}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Stormhaven</h2>
+        <p>Camping in November has many perks</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={highlands_backpacking.src}>
+          <Image
+          src={highlands_backpacking}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Highlands Trail</h2>
+        <p>How can a loop trail be all uphill?</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={sinclair_cove.src}>
+          <Image
+          src={sinclair_cove}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Sinclair Cove</h2>
+        <p>Whoops, I dropped my hiking poles off of the side</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={flowerpot.src}>
+          <Image
+          src={flowerpot}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Seawall</h2>
+        <p>There's something terrifying about the grandness of the Pacific Ocean</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={nokomis_bay.src}>
+          <Image
+          src={nokomis_bay}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Nokomis Bay</h2>
+        <p>The northern coastline of Lake Superior always feels like a dream to me</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={library.src}>
+          <Image
+          src={library}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Vancouver</h2>
+        <p>Knowledge and gladitorial skills are both sources of power</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={grundy_lake.src}>
+          <Image
+          src={grundy_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Grundy Lake</h2>
+        <p>We had a 12 hour drive ahead of us, but still made time to stop here</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={big_salmon_lake_loop.src}>
+          <Image
+          src={big_salmon_lake_loop}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Frontenac</h2>
+        <p>A few brave pines stand strong where others may falter</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={maggie_lake.src}>
+          <Image
+          src={maggie_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Western Uplands</h2>
+        <p>We had lost our tent, ran out of food, we were 10km away from where we should be</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={garibaldi.src}>
+          <Image
+          src={garibaldi}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Garibaldi</h2>
+        <p>The northern cascade mountains are both beautiful and sublime</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={bnw_campfire.src}>
+          <Image
+          src={bnw_campfire}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Big Salmon Lake</h2>
+        <p>The camaraderie around the campfire was as bright as the flames themselves</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={killarney.src}>
+          <Image
+          src={killarney}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Killarney</h2>
+        <p>Turns out that sometimes hiking can be leisurely, who knew!</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={elfin_lakes_two.src}>
+          <Image
+          src={elfin_lakes_two}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Elfin Lakes</h2>
+        <p>How is this the 'less popular' hike in Garibaldi?</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={little_sheguiandah_lake.src}>
+          <Image
+          src={little_sheguiandah_lake}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Little Sheguiandah Lake</h2>
+        <p>Killarney has some of the best campsites I've ever been to</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={bon_echo.src}>
+          <Image
+          src={bon_echo}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>Bon Echo</h2>
+        <p>A big cliff and a very deep lake. I wonder if anyone ever jumped off?</p>
+      </article>
+
+    </div>
+    <ExternalScripts />
+  </body>
+</html>

@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets'
+import macgregor_point from '@/assets/2024/macgregor-point.jpg'
+import stubbs_falls from '@/assets/2024/stubbs-falls.jpg'
+import fairy_bay_lakehouse from '@/assets/2024/fairy-bay-lakehouse.jpg'
+import lake_of_two_rivers from '@/assets/2024/lake-of-two-rivers.jpg'
+import wanderer_frozen_lake from '@/assets/2024/wanderer-on-a-frozen-lake.jpg'
+
+
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Moeyyad Qureshi'
+let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title='Moeyyad Photography'
+    description={description}
+    author={title}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <Header title="2023" />
+    <Footer title={title} description={description} />
+    <div id="main">
+
+      <article class="thumb">
+        <a class="image" href={stubbs_falls.src}>
+            <Image
+            src={stubbs_falls}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+            />
+        </a>
+        <h2>Stubbs Falls</h2>
+        <p>The white of the snow pairs wells with the lush green hemlock forests in Arrowhead</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={fairy_bay_lakehouse.src}>
+            <Image
+            src={fairy_bay_lakehouse}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+            />
+        </a>
+        <h2>Fairy Bay Lakehouse</h2>
+        <p>We booked a room at the resort and got the whole place to ourselves</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={wanderer_frozen_lake.src}>
+            <Image
+            src={wanderer_frozen_lake}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+            />
+        </a>
+        <h2>Lake of Two Rivers</h2>
+        <p>I couldn't go any further because the ice was too thin</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={lake_of_two_rivers.src}>
+            <Image
+            src={lake_of_two_rivers}
+            width="1200"
+            height="750"
+            alt="Moeyyad Photography"
+            />
+        </a>
+        <h2>Lake of Two Rivers</h2>
+        <p>How can something feel so desolate and beautiful at the same time?</p>
+      </article>
+
+      <article class="thumb">
+        <a class="image" href={macgregor_point.src}>
+          <Image
+          src={macgregor_point}
+          width="1200"
+          height="750"
+          alt="Moeyyad Photography"
+          />
+        </a>
+        <h2>MacGregor Point</h2>
+        <p>Winter on coastline of Lake Huron</p>
+      </article>
+
+
+    </div>
+    <ExternalScripts />
+  </body>
+</html>

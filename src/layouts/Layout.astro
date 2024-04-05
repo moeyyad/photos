@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import ExternalScripts from '../components/ExternalScripts.astro'
+
+const title = 'Moeyyad Photography'
+const description = 'Ultra runner from Ontario, Canada. Sometimes I take pictures'
+const author = 'Moeyyad Qureshi'
+const ogImage = '/photos/og-image.jpg'
+
+const { gallery } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title={title}
+    description={description}
+    author={author}
+    og={ogImage}
+  />
+
+  <body class="is-preload">
+    <Header title={gallery} />
+    <Footer title={title} description={description} />
+    <div id="main">
+        <slot />
+    </div>
+    <ExternalScripts />
+  </body>
+</html>

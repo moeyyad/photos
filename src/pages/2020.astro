@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import golden_gate from '@/assets/2020/golden-gate.jpg'
 import muir_beach_overlook from '@/assets/2020/muir-beach-overlook.jpg'
 import oceano_dunes from '@/assets/2020/oceano-dunes.jpg'
@@ -16,225 +15,24 @@ import osa_lake from '@/assets/2020/osa-lake.jpg'
 import cheltenham_badlands from '@/assets/2020/cheltenham-badlands.jpg'
 import mono_cliffs from '@/assets/2020/mono-cliffs.jpg'
 
-import BaseHead from '@/components/BaseHead.astro'
-import Header from '@/components/Header.astro'
-import Footer from '@/components/Footer.astro'
-import ExternalScripts from '@/components/ExternalScripts.astro'
-
-let title = 'Moeyyad Qureshi'
-let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+import Layout from '../layouts/Layout.astro';
+import GalleryItem from '../components/GalleryItem.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <BaseHead
-    title='Moeyyad Photography'
-    description={description}
-    author={title}
-    og={'og-image.jpg'}
-  />
-
-  <body class="is-preload">
-    <Header title="2020" />
-    <Footer title={title} description={description} />
-    <div id="main">
-
-      <article class="thumb">
-        <a class="image" href={golden_gate.src}>
-          <Image
-          src={golden_gate}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Golden Gate Bridge</h2>
-        <p>The Grumpy Old Troll wouldn't be so grumpy if he lived under this bridge</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={muir_beach_overlook.src}>
-          <Image
-          src={muir_beach_overlook}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Muir Overlook</h2>
-        <p>The coasts of California feel like the edge of the world</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={oceano_dunes.src}>
-          <Image
-          src={oceano_dunes}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Oceano Dunes</h2>
-        <p>Speed is the name of the game</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={molera_beach.src}>
-          <Image
-          src={molera_beach}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Andrew Molera</h2>
-        <p>Steeper than it looks</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={pismo_beach.src}>
-          <Image
-          src={pismo_beach}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Pismo Beach</h2>
-        <p>Lovely evening to gallop along the shores</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={venice_beach.src}>
-          <Image
-          src={venice_beach}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Los Angeles</h2>
-        <p>Dreamy landscapes inspire beautiful architecture</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={hollywood.src}>
-          <Image
-          src={hollywood}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Hollywood</h2>
-        <p>A squad of Osprey aircrafts flew overhead as we were leaving</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={track_and_tower.src}>
-          <Image
-          src={track_and_tower}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Track and Tower</h2>
-        <p>A golden hue so brilliant it's as if the trees turned into fire</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={centennial_ridges.src}>
-          <Image
-          src={centennial_ridges}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Centennial Ridges</h2>
-        <p>Not pictured: swarms upon swarms of black flies</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={killarney_lake.src}>
-          <Image
-          src={killarney_lake}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Killarney Lake</h2>
-        <p>Heaven is reaching the end of a portage</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={duck.src}>
-          <Image
-          src={duck}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Algonquin</h2>
-        <p>Mr.Duck taking a sunset stroll along the beach</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={lake_of_two_rivers.src}>
-          <Image
-          src={lake_of_two_rivers}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Lake of Two Rivers</h2>
-        <p>I would never take a car on a joyride, but a canoe...</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={osa_lake.src}>
-          <Image
-          src={osa_lake}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>O.S.A. Lake</h2>
-        <p>Survived my first night in the backcountry and we slept on our own island</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={cheltenham_badlands.src}>
-          <Image
-          src={cheltenham_badlands}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Cheltenham Badlands</h2>
-        <p>Usually I like being outdoors, places like this are the exception</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={mono_cliffs.src}>
-          <Image
-          src={mono_cliffs}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Mono Cliffs</h2>
-        <p>Every hike I fall in love with the Bruce Trail all over again</p>
-      </article>
-
-    </div>
-    <ExternalScripts />
-  </body>
-</html>
+<Layout>
+  <GalleryItem source={golden_gate} title="Golden Gate Bridge" description="The Grumpy Old Troll wouldn't be so grumpy if he lived under this bridge" />
+  <GalleryItem source={muir_beach_overlook} title="Muir Overlook" description="The coasts of California feel like the edge of the world" />
+  <GalleryItem source={oceano_dunes} title="Oceano Dunes" description="Speed is the name of the game" />
+  <GalleryItem source={molera_beach} title="Andrew Molera" description="Steeper than it looks" />
+  <GalleryItem source={pismo_beach} title="Pismo Beach" description="Lovely evening to gallop along the shores" />
+  <GalleryItem source={venice_beach} title="Los Angeles" description="Dreamy landscapes inspire beautiful architecture" />
+  <GalleryItem source={hollywood} title="Hollywood" description="A squad of Osprey aircrafts flew overhead as we were leaving" />
+  <GalleryItem source={track_and_tower} title="Track and Tower" description="A golden hue so brilliant it's as if the trees turned into fire" />
+  <GalleryItem source={centennial_ridges} title="Centennial Ridges" description="Not pictured: swarms upon swarms of black flies" />
+  <GalleryItem source={killarney_lake} title="Killarney Lake" description="Heaven is reaching the end of a portage" />
+  <GalleryItem source={duck} title="Algonquin" description="Mr.Duck taking a sunset stroll along the beach" />
+  <GalleryItem source={lake_of_two_rivers} title="Lake of Two Rivers" description="I would never take a car on a joyride, but a canoe..." />
+  <GalleryItem source={osa_lake} title="O.S.A. Lake" description="Survived my first night in the backcountry and we slept on our own island" />
+  <GalleryItem source={cheltenham_badlands} title="Cheltenham Badlands" description="Usually I like being outdoors, places like this are the exception" />
+  <GalleryItem source={mono_cliffs} title="Mono Cliffs" description="Every hike I fall in love with the Bruce Trail all over again" />
+</Layout>

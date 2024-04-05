@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import emerald_lake_pano from '@/assets/past/emerald-lake-pano.jpg'
 import yoho_sunset from '@/assets/past/yoho-sunset.jpg'
 import trans_canada_highway from '@/assets/past/trans-canada-highway.jpg'
@@ -16,225 +15,24 @@ import andes from '@/assets/past/andes.jpg'
 import toronto from '@/assets/past/toronto.jpg'
 import saskatchewan_landing_camping from '@/assets/past/saskatchewan-landing-camping.jpg'
 
-import BaseHead from '@/components/BaseHead.astro'
-import Header from '@/components/Header.astro'
-import Footer from '@/components/Footer.astro'
-import ExternalScripts from '@/components/ExternalScripts.astro'
-
-let title = 'Moeyyad Qureshi'
-let description = 'Ultra runner and outdoor enthusiast from Ontario, Canada'
+import Layout from '../layouts/Layout.astro';
+import GalleryItem from '../components/GalleryItem.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <BaseHead
-    title='Moeyyad Photography'
-    description={description}
-    author={title}
-    og={'og-image.jpg'}
-  />
-
-  <body class="is-preload">
-    <Header title="Past" />
-    <Footer title={title} description={description} />
-    <div id="main">
-
-      <article class="thumb">
-        <a class="image" href={emerald_lake_pano.src}>
-          <Image
-          src={emerald_lake_pano}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Emerald Lake</h2>
-        <p>This must be where Heaven and Earth meets</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={yoho_sunset.src}>
-          <Image
-          src={yoho_sunset}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Yoho</h2>
-        <p>Sunset on the 3rd day of driving from Vancouver to Toronto</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={trans_canada_highway.src}>
-          <Image
-          src={trans_canada_highway}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Trans Canada</h2>
-        <p>The mountains progressively grew as we neared the Great Divide</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={saskatchewan_landing_picnic.src}>
-          <Image
-          src={saskatchewan_landing_picnic}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Saskatchewan Landing</h2>
-        <p>A few hills who defy the convention of endless flat plains</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={cerro_san_cristobal_gondola.src}>
-          <Image
-          src={cerro_san_cristobal_gondola}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Cerro San Cristobal</h2>
-        <p>Getting my first job 10,000km away from where I lived was a good choice</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={notre_dame_basilica.src}>
-          <Image
-          src={notre_dame_basilica}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Notre Dame Basilica</h2>
-        <p>Usually I like being outdoors, places like this are the exception</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={mont_tremblant.src}>
-          <Image
-          src={mont_tremblant}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Mont Tremblant</h2>
-        <p>We arrived at the top after the last gondola left, thankfully a ranger gave us a ride down</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={shopify_plus.src}>
-          <Image
-          src={shopify_plus}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Shopify</h2>
-        <p>Probably the coolest looking office I'll ever work at</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={thousand_islands.src}>
-          <Image
-          src={thousand_islands}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Thousand Islands</h2>
-        <p>A floating miniature castle that looks elegant from every angle</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={emerald_lake_canoe.src}>
-          <Image
-          src={emerald_lake_canoe}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Emerald Lake</h2>
-        <p>Going out for a particularly aesthetic paddle</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={art_gallery_ontario.src}>
-          <Image
-          src={art_gallery_ontario}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>AGO</h2>
-        <p>An exhibition titled the Infinity Room</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={orange_julep.src}>
-          <Image
-          src={orange_julep}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Orange Julep</h2>
-        <p>Never a wrong moment for Orange Julep</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={andes.src}>
-          <Image
-          src={andes}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Embalse El Yeso</h2>
-        <p>High in the Andes Mountains</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={toronto.src}>
-          <Image
-          src={toronto}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Toronto</h2>
-        <p>All roads lead to the CN Tower</p>
-      </article>
-
-      <article class="thumb">
-        <a class="image" href={saskatchewan_landing_camping.src}>
-          <Image
-          src={saskatchewan_landing_camping}
-          width="1200"
-          height="750"
-          alt="Moeyyad Photography"
-          />
-        </a>
-        <h2>Saskatchewan Landing</h2>
-        <p>A most picturesque camping spot</p>
-      </article>
-
-    </div>
-    <ExternalScripts />
-  </body>
-</html>
+<Layout>
+  <GalleryItem source={emerald_lake_pano} title="Emerald Lake" description="This must be where Heaven and Earth meets" />
+  <GalleryItem source={yoho_sunset} title="Yoho" description="Sunset on the 3rd day of driving from Vancouver to Toronto" />
+  <GalleryItem source={trans_canada_highway} title="Trans Canada" description="The mountains progressively grew as we neared the Great Divide" />
+  <GalleryItem source={saskatchewan_landing_picnic} title="Saskatchewan Landing" description="A few hills who defy the convention of endless flat plains" />
+  <GalleryItem source={cerro_san_cristobal_gondola} title="Cerro San Cristobal" description="Getting my first job 10,000km away from where I lived was a good choice" />
+  <GalleryItem source={notre_dame_basilica} title="Notre Dame Basilica" description="Usually I like being outdoors, places like this are the exception" />
+  <GalleryItem source={mont_tremblant} title="Mont Tremblant" description="We arrived at the top after the last gondola left, thankfully a ranger gave us a ride down" />
+  <GalleryItem source={shopify_plus} title="Shopify" description="Probably the coolest looking office I'll ever work at" />
+  <GalleryItem source={thousand_islands} title="Thousand Islands" description="A floating miniature castle that looks elegant from every angle" />
+  <GalleryItem source={emerald_lake_canoe} title="Emerald Lake" description="Going out for a particularly aesthetic paddle" />
+  <GalleryItem source={art_gallery_ontario} title="AGO" description="An exhibition titled the Infinity Room" />
+  <GalleryItem source={orange_julep} title="Orange Julep" description="Never a wrong moment for Orange Julep" />
+  <GalleryItem source={andes} title="Embalse El Yeso" description="High in the Andes Mountains" />
+  <GalleryItem source={toronto} title="Toronto" description="All roads lead to the CN Tower" />
+  <GalleryItem source={saskatchewan_landing_camping} title="Saskatchewan Landing" description="A most picturesque camping spot" />
+</Layout>

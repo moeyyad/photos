@@ -4,7 +4,7 @@
 
 ![The best way to show off your pictures](/public/og-image.jpg)
 
-> You can see a live demo at moeyyad.com/photos
+> You can see a live demo at [moeyyad.com/photos](https://moeyyad.com/photos)
 
 ## Features 
 

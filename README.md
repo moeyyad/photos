@@ -59,7 +59,7 @@ pnpm dev
 
 
 ## Personalization
-#### Adding Photos
+### Adding Photos
 To customize this project you can add your photos to the `/src/assets/` directory. Then import each photo on the page you wish they appear and pass them to the `<GalleryItem />` component.
 
 ```astro
@@ -72,7 +72,7 @@ import example_image from '@/assets/example_image.jpg';
 ```
 In the example above, `<GalleryItem />` takes in two *necessary* props, `source`  and `title`, which are needed to display the image. The `description` prop is *optional* to show a caption when the image is clicked.
 
-#### Multiple Galleries
+### Multiple Galleries
 Use Astro's built-in routing system to create multiple galleries. Simply create an `.astro` file with the name of what you want the route to be called, and add it to the `/src/pages` directory. 
 
 Each page uses the `<Layout />` component with a `gallery` prop that lets you name the gallery. While the prop is *technically optional*, it is highly recommended to make navigating between galleries easier for end users.
@@ -87,10 +87,10 @@ To add a gallery to the navigation flow, you will have to modify `/src/component
 </section>
 ```
 
-#### Personal Links
+### Personal Links
 The `/src/components/Footer.astro` file contains a section that lets you redirect users to other websites such as your Instagram profile or personal website using `FontAwesome` icons that are already provided in this project.
 
-#### Metadata
+### Metadata
 The `/src/layouts/Layout.astro` file contains the following variables that can be easily changed to personalize the metadata of the project.
 
 ```astro

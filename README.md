@@ -67,7 +67,7 @@ To customize this project you can add your photos to the `/src/assets/` director
 import example_image from '@/assets/example_image.jpg';
 ---
 <Layout gallery="Example Gallery">
-    <GalleryItem source={imageA} title="A" description="hello world" />
+    <GalleryItem source={example_image} title="Example" description="hello world" />
 </Layout>
 ```
 In the example above, `<GalleryItem />` takes in two *necessary* props, `source`  and `title`, which are needed to display the image. The `description` prop is *optional* to show a caption when the image is clicked.

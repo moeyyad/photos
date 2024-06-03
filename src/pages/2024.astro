@@ -1,0 +1,33 @@
+---
+import northern_lights from '@/assets/2024/northern-lights.jpg'
+import killarney from '@/assets/2024/killarney.jpg'
+import blue_tent from '@/assets/2024/blue-tent.jpg'
+import lakehouse from '@/assets/2024/lakehouse.jpg'
+import lake_of_two_rivers from '@/assets/2024/lake-of-two-rivers.jpg'
+import fairy_lake from '@/assets/2024/fairy-lake.jpg'
+import eramosa from '@/assets/2024/eramosa-karst.jpg'
+import stubbs_falls from '@/assets/2024/stubbs_falls.jpg'
+import arrowhead from '@/assets/2024/arrowhead.jpg'
+import big_bend from '@/assets/2024/big-bend.jpg'
+import macgregor_point from '@/assets/2024/macgregor-point.jpg'
+
+
+
+
+import Layout from '../layouts/Layout.astro';
+import GalleryItem from '../components/GalleryItem.astro';
+---
+
+<Layout gallery="2024">
+  <GalleryItem source={northern_lights} title="Nothern Lights" description="It felt as reality shattered and I stepped into a different world" />
+  <GalleryItem source={killarney} title="Killarney" description="This place is the gateway to Heaven" />
+  <GalleryItem source={blue_tent} title="George Lake Campground" description="Waking up to the sight of trees is a special feeling" />
+  <GalleryItem source={fairy_lake} title="Fairy Lake" description="A magical island on a magical lake" />
+  <GalleryItem source={lakehouse} title="Fairy Bay Lakehouse" description="Frozen lakes are just as nice to look at!" />
+  <GalleryItem source={lake_of_two_rivers} title="Lake of Two Rivers" description="Algonquin is great is all seasons!" />
+  <GalleryItem source={macgregor_point} title="Macgregor Point" description="The rocky and icy shorelines of Lake Huron are as trecherous as they are beautiful" />
+  <GalleryItem source={arrowhead} title="Arrowhead" description="I can't get enough of this combination of sun, snow, and hemlock trees" />
+  <GalleryItem source={stubbs_falls} title="Stubbs Falls" description="A charming waterfall tucked away in a winter paradise" />
+  <GalleryItem source={big_bend} title="Big Bend" description="Enjoying the classic Arrowhead view" />
+  <GalleryItem source={eramosa} title="Eramosa Karst" description="This is what ideal running conditions looks like" />
+</Layout>
